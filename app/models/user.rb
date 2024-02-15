@@ -4,4 +4,8 @@ class User < ApplicationRecord
   # devise :database_authenticatable, :registerable,
   #        :recoverable, :rememberable, :validatable
   devise :database_authenticatable, :recoverable, :validatable
+
+  def self.find_for_database_authentication(warden_conditions)
+    find_by(email: warden_conditions[:email], available: true)
+  end
 end
