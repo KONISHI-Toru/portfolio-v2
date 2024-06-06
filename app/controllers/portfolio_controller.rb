@@ -11,6 +11,7 @@ class PortfolioController < ApplicationController
 
   def init_conditions
     # @tech_categories = TechCategory.includes(:tech_tags).order(:display_order)
+    @tech_categories = {}
     @counts = [[5, 5], [10, 10], [30, 30], ["全て", -1]]
   end
 end

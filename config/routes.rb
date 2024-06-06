@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  # resources :portfolio, only: [:index] do
+  #   collection do
+  #     get :show
+  #   end
+  # end
+  get 'portfolio/index'
+  get 'portfolio/show'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
