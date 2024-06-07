@@ -5,6 +5,8 @@ class User < ApplicationRecord
   #        :recoverable, :rememberable, :validatable
   devise :database_authenticatable, :recoverable, :validatable
 
+  has_one :profile
+
   scope :published, -> { where(available: true) }
 
   def self.find_for_database_authentication(warden_conditions)

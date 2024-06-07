@@ -11,7 +11,14 @@
 admin_email = ENV.fetch("ADMIN_EMAIL", nil)
 admin_password = ENV.fetch("ADMIN_PASSWORD", nil)
 
-User.create(
+user = User.create(
     email: admin_email,
-    password: admin_password
+    password: admin_password,
+    available: true,
 ) if admin_email.present? && admin_password.present?
+
+Profile.create(
+    user_id: user.id,
+    name: 'システム管理者',
+    published: true
+) if user.present?

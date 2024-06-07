@@ -10,7 +10,7 @@
     <%= f.label :user_id, 'ユーザ:', class: "col-sm-2 control-label" %>
     <div class="col-sm-6">
       <%= f.collection_select :user_id,
-      User.published, :id, :email,
+      @users, :id, :name,
       {},
       {class: "custom-select"} %>
     </div>
