@@ -1,5 +1,6 @@
 ja:
   application_name: "ポートフォリオ"
+  admin_name: "管理画面"
 
   activerecord:
     models:

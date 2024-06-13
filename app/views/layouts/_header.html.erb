@@ -1,1 +1,7 @@
 <%= link_to t(:application_name), root_url, id: "logo", class: "navbar-brand", data: {"turbolinks" => false} %>
+
+<div class="header-space"></div>
+
+<nav>
+  <%= link_to t(:admin_name), rails_admin.dashboard_path %>
+</nav>
