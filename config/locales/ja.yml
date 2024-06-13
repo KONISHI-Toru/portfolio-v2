@@ -1,2 +1,16 @@
 ja:
   application_name: "ポートフォリオ"
+
+  activerecord:
+    models:
+      profile: プロフィール
+    attributes:
+
+      profile:
+        name: 名前
+        introduction: 自己紹介
+        published: 公開
+
+  attributes:
+    created_at: 登録日時
+    updated_at: 更新日時
