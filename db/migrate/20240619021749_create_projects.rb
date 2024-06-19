@@ -11,7 +11,7 @@ class CreateProjects < ActiveRecord::Migration[7.1]
       t.date :from
       t.date :to
       t.belongs_to :user, null: false, foreign_key: true
-      t.boolean :published
+      t.boolean :published, default: false, null: false
 
       t.timestamps
     end
