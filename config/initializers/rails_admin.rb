@@ -43,4 +43,6 @@ RailsAdmin.config do |config|
   config.model User do
     object_label_method :email
   end
+
+  config.excluded_models = %w[ActiveStorage::Blob ActiveStorage::Attachment ActiveStorage::VariantRecord]
 end
