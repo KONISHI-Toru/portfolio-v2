@@ -7,6 +7,7 @@ ja:
       profile: プロフィール
       project: プロジェクト
       tech_category: 技術カテゴリ
+      tech_tag: 技術タグ
 
     attributes:
       profile:
@@ -32,9 +33,15 @@ ja:
       tech_category:
         parent: 親カテゴリ
         name: 名前
-        display_order: 表示順
         children: 子カテゴリ
+        tech_tags: 技術タグ
+
+      tech_tag:
+        name: 名前
+        tech_category: 技術カテゴリ
+        projects: プロジェクト
 
   attributes:
+    display_order: 表示順
     created_at: 登録日時
     updated_at: 更新日時
