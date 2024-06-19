@@ -6,6 +6,7 @@ ja:
     models:
       profile: プロフィール
       project: プロジェクト
+      tech_category: 技術カテゴリ
 
     attributes:
       profile:
@@ -27,6 +28,12 @@ ja:
         published: 公開
         hw_diagram: H/W構成図
         sw_diagram: S/W構成図
+
+      tech_category:
+        parent: 親カテゴリ
+        name: 名前
+        display_order: 表示順
+        children: 子カテゴリ
 
   attributes:
     created_at: 登録日時

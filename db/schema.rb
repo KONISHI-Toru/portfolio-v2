@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_19_024818) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_19_054517) do
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -66,6 +66,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_19_024818) do
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
+  create_table "tech_categories", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+    t.bigint "parent_id"
+    t.string "name", null: false
+    t.integer "display_order", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["parent_id"], name: "index_tech_categories_on_parent_id"
+  end
+
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -83,4 +92,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_19_024818) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "profiles", "users"
   add_foreign_key "projects", "users"
+  add_foreign_key "tech_categories", "tech_categories", column: "parent_id"
 end
