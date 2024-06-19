@@ -50,7 +50,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_19_024818) do
   end
 
   create_table "projects", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.string "target"
     t.text "overview"
     t.text "hw_configuration"
