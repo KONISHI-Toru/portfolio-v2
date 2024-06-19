@@ -5,12 +5,28 @@ ja:
   activerecord:
     models:
       profile: プロフィール
-    attributes:
+      project: プロジェクト
 
+    attributes:
       profile:
         name: 名前
         introduction: 自己紹介
         published: 公開
+
+      project:
+        name: 名前
+        target: 自己紹介
+        overview: 概要
+        hw_configuration: H/W構成
+        sw_configuration: S/W構成
+        production_url: 本番環境URL
+        repository_url: リポジトリURL
+        from: 開始時期
+        to: 終了時期
+        user: ユーザ
+        published: 公開
+        hw_diagram: H/W構成図
+        sw_diagram: S/W構成図
 
   attributes:
     created_at: 登録日時
