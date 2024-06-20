@@ -62,5 +62,11 @@ RailsAdmin.config do |config|
     end
   end
 
-  config.excluded_models = %w[ActiveStorage::Blob ActiveStorage::Attachment ActiveStorage::VariantRecord]
+  config.excluded_models = %w[
+    ActiveStorage::Blob
+    ActiveStorage::Attachment
+    ActiveStorage::VariantRecord
+    ProjectPhase
+    ProjectPosition
+  ]
 end
