@@ -22,3 +22,23 @@ Profile.create(
     name: 'システム管理者',
     published: true
 ) if user.present?
+
+[
+  ['要件定義', 100],
+  ['技術調査', 200],
+  ['設計', 300],
+  ['開発', 400],
+  ['テスト', 500],
+  ['運用', 600],
+].each do |elem|
+  Phase.create(name: elem[0], display_order: elem[1])
+end if Phase.count == 0
+
+[
+  ['マネージャー', 100],
+  ['SE', 200],
+  ['プログラマ', 300],
+  ['テスター', 400],
+].each do |elem|
+  Position.create(name: elem[0], display_order: elem[1])
+end if Position.count == 0
