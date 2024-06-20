@@ -44,5 +44,23 @@ RailsAdmin.config do |config|
     object_label_method :email
   end
 
+  config.model TechTag do
+    list do
+      sort_by :display_order
+    end
+  end
+
+  config.model Phase do
+    list do
+      sort_by :display_order
+    end
+  end
+
+  config.model Position do
+    list do
+      sort_by :display_order
+    end
+  end
+
   config.excluded_models = %w[ActiveStorage::Blob ActiveStorage::Attachment ActiveStorage::VariantRecord]
 end
