@@ -8,6 +8,7 @@ ja:
       project: プロジェクト
       tech_category: 技術カテゴリ
       tech_tag: 技術タグ
+      phase: フェーズ
 
     attributes:
       profile:
@@ -29,6 +30,8 @@ ja:
         published: 公開
         hw_diagram: H/W構成図
         sw_diagram: S/W構成図
+        tech_tags: 技術タグ
+        phases: フェーズ
 
       tech_category:
         parent: 親カテゴリ
@@ -39,6 +42,10 @@ ja:
       tech_tag:
         name: 名前
         tech_category: 技術カテゴリ
+        projects: プロジェクト
+
+      phase:
+        name: 名前
         projects: プロジェクト
 
   attributes:
