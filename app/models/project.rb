@@ -6,4 +6,6 @@ class Project < ApplicationRecord
   has_many :tech_tags, through: :project_tech_tags
   has_many :project_phases, dependent: :delete_all
   has_many :phases, through: :project_phases
+  has_many :project_positions, dependent: :delete_all
+  has_many :positions, through: :project_positions
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_20_031438) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_20_034636) do
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -49,6 +49,18 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_20_031438) do
   create_table "phases_projects", id: false, charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.bigint "project_id", null: false
     t.bigint "phase_id", null: false
+  end
+
+  create_table "positions", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "display_order", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "positions_projects", id: false, charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+    t.bigint "project_id", null: false
+    t.bigint "position_id", null: false
   end
 
   create_table "profiles", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|

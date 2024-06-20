@@ -9,6 +9,7 @@ ja:
       tech_category: 技術カテゴリ
       tech_tag: 技術タグ
       phase: フェーズ
+      position: 役割
 
     attributes:
       profile:
@@ -32,6 +33,7 @@ ja:
         sw_diagram: S/W構成図
         tech_tags: 技術タグ
         phases: フェーズ
+        positions: 役割
 
       tech_category:
         parent: 親カテゴリ
@@ -45,6 +47,10 @@ ja:
         projects: プロジェクト
 
       phase:
+        name: 名前
+        projects: プロジェクト
+
+      position:
         name: 名前
         projects: プロジェクト
 
