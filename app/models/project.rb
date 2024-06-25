@@ -2,10 +2,7 @@ class Project < ApplicationRecord
   belongs_to :user
   has_one_attached :hw_diagram
   has_one_attached :sw_diagram
-  has_many :project_tech_tags, dependent: :delete_all
-  has_many :tech_tags, through: :project_tech_tags
-  has_many :project_phases, dependent: :delete_all
-  has_many :phases, through: :project_phases
-  has_many :project_positions, dependent: :delete_all
-  has_many :positions, through: :project_positions
+  has_and_belongs_to_many :tech_tags
+  has_and_belongs_to_many :phases, join_table: :projects_phases
+  has_and_belongs_to_many :positions, join_table: :projects_positions
 end
