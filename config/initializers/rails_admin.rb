@@ -44,9 +44,16 @@ RailsAdmin.config do |config|
     object_label_method :email
   end
 
-  config.model TechTag do
+  config.model TechCategory do
     list do
       sort_by :display_order
+    end
+  end
+
+  config.model TechTag do
+    list do
+      sort_by 'tech_categories.display_order, tech_tags.display_order asc, tech_tags.id'
+      sort_reverse false
     end
   end
 
@@ -66,7 +73,5 @@ RailsAdmin.config do |config|
     ActiveStorage::Blob
     ActiveStorage::Attachment
     ActiveStorage::VariantRecord
-    ProjectPhase
-    ProjectPosition
   ]
 end
