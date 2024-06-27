@@ -19,7 +19,7 @@ ja:
 
       project:
         name: 名前
-        target: 自己紹介
+        target: 対象業種
         overview: 概要
         hw_configuration: H/W構成
         sw_configuration: S/W構成
