@@ -1,4 +1,4 @@
-<div class="alert alert-warning" role="alert">
+<div class="notice alert alert-warning" role="alert">
   リソースが非常に貧弱な環境で動作しています。
   負荷低減にご協力ください。
 </div>
@@ -23,12 +23,12 @@
         <fieldset>
           <legend>技術要素</legend>
           <% @tech_categories.each do |category| %>
-          <div class="form-group row">
-            <label class="col-sm-3 control-label"><%= category.name %>:</label>
-            <div class="col-sm-9">
+          <div class="category-condition">
+            <label class="category"><%= category.name %>:</label>
+            <div class="tech-tags">
               <%= f.collection_check_boxes :tech_tag_ids, category.tech_tags, :id, :name, {include_hidden: false, checked: @portfolio_form.tech_tag_ids[category.id.to_s]}, {name: "portfolio_form[tech_tag_ids][#{category.id}][]"} do |b| %>
-                <div class="form-check form-check-inline">
-                  <%= b.label(class: "form-check-label") { b.check_box + b.text } %>
+                <div>
+                  <%= b.label { b.check_box + b.text } %>
                 </div>
               <% end %>
             </div>
@@ -55,3 +55,5 @@
   </div>
 
 <% end %>
+
+<%= render 'portfolio' %>

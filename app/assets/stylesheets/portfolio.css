@@ -26,3 +26,49 @@ form > .form-group {
   display: grid;
   grid-template-columns: 1fr 3fr;
 }
+
+.category-condition {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.category-condition:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+
+.category-condition .tech-tags div {
+  display: inline-block;
+}
+
+.projects > details {
+  margin-bottom: 0;
+}
+
+.projects > details:first-of-type:not(:last-of-type) {
+  border-bottom: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.projects > details:not(:first-of-type):not(:last-of-type) {
+  border-bottom: 0;
+  border-radius: 0;
+}
+
+.projects > details:last-of-type:not(:first-of-type) {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.projects > details[open] > summary {
+  border-bottom: 1px solid var(--border);
+  background-color: var(--accent-bg);
+}
+
+.projects > details[open] {
+  background-color: #fff;
+}
+
+.projects > details > summary:first-of-type {
+  list-style: none;
+}

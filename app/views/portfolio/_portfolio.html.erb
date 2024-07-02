@@ -1,0 +1,91 @@
+<% if @target_user.present? %>
+  <hr>
+  <style>
+    h2 {
+      margin-top: 1rem;
+    }
+
+    h4 a.btn {
+      border: 0px;
+      padding: 0px;
+      font-size: 1.25rem;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+  </style>
+  <div class="container px-0 pt-2">
+    <h2>自己紹介</h2>
+    <%= simple_format(h(@target_user.profile.introduction)) %>
+
+    <% if @projects.present? %>
+    <h2>主な開発実績</h2>
+    <div class="projects" id="projlist">
+      <% @projects.each.with_index(1) do |project, idx| %>
+        <details>
+          <summary><%= project.title %></summary>
+          <div>
+            <% if project.overview.present? %>
+              <h5>概要</h5>
+              <%= simple_format(h(project.overview)) %>
+            <% end %>
+            <% if project.has_hw_configuration? %>
+              <h5>HW構成</h5>
+              <%= simple_format(h(project.hw_configuration)) %>
+              <% if project.hw_diagram.attached? %>
+                <figure class="figure w-auto d-block">
+                  <%= image_tag project.hw_diagram, class:"img-fluid mx-auto d-block" %>
+                  <figcaption class="figure-caption text-center">HW構成図</figcaption>
+                </figure>
+              <% end %>
+            <% end %>
+            <% if project.has_sw_configuration? %>
+              <h5>SW構成</h5>
+              <%= simple_format(h(project.sw_configuration)) %>
+              <% if project.sw_diagram.attached? %>
+                <figure class="figure w-auto d-block">
+                  <%= image_tag project.sw_diagram, class:"figure-img img-fluid mx-auto d-block" %>
+                  <figcaption class="figure-caption text-center">SW構成図</figcaption>
+                </figure>
+              <% end %>
+            <% end %>
+            <% if project.tech_tags.present? %>
+              <h5>使用技術</h5>
+              <p>
+                <%= project.tech_tags.collect { |t| t.name }.join(", ") %>
+              </p>
+            <% end %>
+            <% if project.phases.present? %>
+              <h5>担当フェーズ</h5>
+              <p>
+                <%= project.phases.collect { |t| t.name }.join(", ") %>
+              </p>
+            <% end %>
+            <% if project.positions.present? %>
+              <h5>役割</h5>
+              <p>
+                <%= project.positions.collect { |t| t.name }.join(", ") %>
+              </p>
+            <% end %>
+            <% if project.production_url.present? %>
+              <h5>本番環境URL</h5>
+              <p><%= link_to project.production_url, project.production_url, target: :_blank %></p>
+            <% end %>
+            <% if project.repository_url.present? %>
+              <h5>リポジトリURL</h5>
+              <p><%= link_to project.repository_url, project.repository_url, target: :_blank %></p>
+            <% end %>
+            <% if project.from.present? || project.to.present? %>
+              <h5>期間</h5>
+              <p><%= project.project_period %></p>
+            <% end %>
+          </div>
+        </details>
+      <% end %>
+    </div>
+    <% end %>
+
+    <h2>連絡先</h2>
+    <p><%= mailto_link @target_user %></p>
+  </div>
+<% end %>
+
