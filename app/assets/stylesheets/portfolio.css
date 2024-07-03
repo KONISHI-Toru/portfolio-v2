@@ -72,3 +72,9 @@ form > .form-group {
 .projects > details > summary:first-of-type {
   list-style: none;
 }
+
+figure > img,
+figure > picture > img {
+    display: block;
+    margin-inline: auto;
+}
