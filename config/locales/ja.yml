@@ -1,6 +1,8 @@
 ja:
   application_name: "ポートフォリオ"
   admin_name: "管理画面"
+  sign_in: ログイン
+  sign_out: ログアウト
 
   activerecord:
     models:

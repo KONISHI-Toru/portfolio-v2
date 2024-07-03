@@ -3,5 +3,10 @@
 <div class="header-space"></div>
 
 <nav>
-  <%= link_to t(:admin_name), rails_admin.dashboard_path %>
+  <% if user_signed_in? %>
+    <%= link_to t(:admin_name), rails_admin.dashboard_path %>
+    <%= link_to t(:sign_out), destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to t(:sign_in), new_user_session_path %>
+  <% end %>
 </nav>
