@@ -60,3 +60,9 @@ ja:
     display_order: 表示順
     created_at: 登録日時
     updated_at: 更新日時
+
+  enums:
+    user:
+      role:
+        administrator: 管理者
+        owner: ユーザ

@@ -25,6 +25,7 @@ ja:
         unlock_token: ロック解除用トークン
         available: 有効
         profile: プロフィール
+        role: 権限
     models:
       user: ユーザー
   devise:

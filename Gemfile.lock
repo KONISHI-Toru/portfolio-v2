@@ -86,6 +86,7 @@ GEM
     bootsnap (1.17.1)
       msgpack (~> 1.2)
     builder (3.2.4)
+    cancancan (3.6.1)
     concurrent-ruby (1.2.3)
     connection_pool (2.4.1)
     crass (1.0.6)
@@ -115,6 +116,8 @@ GEM
       ruby2_keywords
     drb (2.2.0)
       ruby2_keywords
+    enum_help (0.0.19)
+      activesupport (>= 3.0.0)
     erubi (1.12.0)
     factory_bot (6.4.6)
       activesupport (>= 5.0.0)
@@ -310,11 +313,13 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  cancancan
   debug
   devise (~> 4.9)
   devise-i18n
   dotenv-rails
   draper
+  enum_help
   factory_bot_rails
   image_processing (~> 1.2)
   importmap-rails

@@ -42,6 +42,27 @@ RailsAdmin.config do |config|
 
   config.model User do
     object_label_method :email
+
+    field :id
+    field :email
+    field :role, :enum do
+      pretty_value do
+        I18n.t("enums.user.role.#{value}") if value
+      end
+      enum do
+        User.roles_i18n.invert
+      end
+    end
+    field :profile do
+      pretty_value do
+        value&.name
+      end
+    end
+    include_all_fields
+
+    list do
+      exclude_fields :encrypted_password, :reset_password_sent_at, :remember_created_at, :updated_at
+    end
   end
 
   config.model TechCategory do
@@ -55,18 +76,21 @@ RailsAdmin.config do |config|
       sort_by 'tech_categories.display_order, tech_tags.display_order asc, tech_tags.id'
       sort_reverse false
     end
+    exclude_fields :projects
   end
 
   config.model Phase do
     list do
       sort_by :display_order
     end
+    exclude_fields :projects
   end
 
   config.model Position do
     list do
       sort_by :display_order
     end
+    exclude_fields :projects
   end
 
   config.excluded_models = %w[
