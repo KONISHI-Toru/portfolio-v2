@@ -28,5 +28,19 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/blob/develop/docs/define_check_abilities.md
+
+    return unless user.present?
+
+    can :access, :rails_admin
+    can :read, :dashboard
+    can :manage, Profile, user: user
+    can :manage, Project, user: user
+    can :read, Phase
+    can :read, Position
+    can :read, TechCategory
+    can :read, TechTag
+
+    return unless user.admin?
+    can :manage, :all
   end
 end

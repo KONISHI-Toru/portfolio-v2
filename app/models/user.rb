@@ -17,4 +17,8 @@ class User < ApplicationRecord
   def self.find_for_database_authentication(warden_conditions)
     find_by(email: warden_conditions[:email], available: true)
   end
+
+  def admin?
+    self.administrator?
+  end
 end
