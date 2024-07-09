@@ -12,7 +12,7 @@ class User < ApplicationRecord
 
   has_one :profile
 
-  scope :published, -> { where(available: true) }
+  scope :published, -> { joins(:profile).merge(Profile.published) }
 
   def self.find_for_database_authentication(warden_conditions)
     find_by(email: warden_conditions[:email], available: true)
