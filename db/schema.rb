@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_04_061551) do
+ActiveRecord::Schema[7.1].define(version: 2024_10_31_051403) do
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -83,16 +83,22 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_04_061551) do
   create_table "projects_phases", id: false, charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.bigint "project_id", null: false
     t.bigint "phase_id", null: false
+    t.index ["phase_id"], name: "fk_rails_14663ed43f"
+    t.index ["project_id", "phase_id"], name: "index_projects_phases_on_project_id_and_phase_id", unique: true
   end
 
   create_table "projects_positions", id: false, charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.bigint "project_id", null: false
     t.bigint "position_id", null: false
+    t.index ["position_id"], name: "fk_rails_e1d67e7a7e"
+    t.index ["project_id", "position_id"], name: "index_projects_positions_on_project_id_and_position_id", unique: true
   end
 
   create_table "projects_tech_tags", id: false, charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.bigint "project_id", null: false
     t.bigint "tech_tag_id", null: false
+    t.index ["project_id", "tech_tag_id"], name: "index_projects_tech_tags_on_project_id_and_tech_tag_id", unique: true
+    t.index ["tech_tag_id"], name: "fk_rails_621000cc7e"
   end
 
   create_table "tech_categories", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
@@ -131,6 +137,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_04_061551) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "profiles", "users"
   add_foreign_key "projects", "users"
+  add_foreign_key "projects_phases", "phases"
+  add_foreign_key "projects_phases", "projects"
+  add_foreign_key "projects_positions", "positions"
+  add_foreign_key "projects_positions", "projects"
+  add_foreign_key "projects_tech_tags", "projects"
+  add_foreign_key "projects_tech_tags", "tech_tags"
   add_foreign_key "tech_categories", "tech_categories", column: "parent_id"
   add_foreign_key "tech_tags", "tech_categories"
 end
