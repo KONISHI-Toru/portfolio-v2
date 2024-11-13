@@ -67,4 +67,6 @@ Rails.application.configure do
   # Simple.css と sassc-rails の相性が悪いっぽい。
   # テストでは使わないようにする。
   config.assets.css_compressor = nil
+
+  config.logger = Logger.new(Date.today.strftime("log/test_%Y-%m-%d.log"))
 end
