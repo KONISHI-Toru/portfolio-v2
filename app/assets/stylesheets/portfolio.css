@@ -78,3 +78,21 @@ figure > picture > img {
     display: block;
     margin-inline: auto;
 }
+
+.notice.alert-info {
+  background-color: #bcdfff;
+  color: #0067C0;
+  border-color: #0067C0;
+}
+
+.notice.alert-warning {
+  background-color: #fff3cd;
+  color: #c7980c;
+  border-color: #c7980c;
+}
+
+.notice.alert-danger {
+  background-color: #ffd4d1;
+  color: #930403;
+  border-color: #930403;
+}

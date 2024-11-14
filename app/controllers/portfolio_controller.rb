@@ -3,6 +3,8 @@ class PortfolioController < ApplicationController
 
   def index
     @portfolio_form = PortfolioForm.new
+
+    flash.now[:warning] = "リソースが非常に貧弱な環境で動作しています。\n負荷低減にご協力ください。"
   end
 
   def show

@@ -1,8 +1,8 @@
-<div class="notice alert alert-warning" role="alert">
-  リソースが非常に貧弱な環境で動作しています。
-  負荷低減にご協力ください。
-</div>
-  
+<% flash.each do |message_type, message| %>
+  <div class="notice alert alert-<%= alert_type(message_type) %>" role="alert">
+    <%= nl2br(message) %>
+  </div>
+<% end %>
 <h1>ポートフォリオ</h1>
 
 <%= form_with model: @portfolio_form, url: portfolio_show_path, method: :get, local: true, html:  {} do |f| %>
