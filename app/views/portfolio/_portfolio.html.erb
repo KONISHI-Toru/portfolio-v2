@@ -51,19 +51,19 @@
             <% if project.tech_tags.present? %>
               <h5>使用技術</h5>
               <p>
-                <%= project.tech_tags.collect { |t| t.name }.join(", ") %>
+                <%= project.tech_tags_text %>
               </p>
             <% end %>
             <% if project.phases.present? %>
               <h5>担当フェーズ</h5>
               <p>
-                <%= project.phases.collect { |t| t.name }.join(", ") %>
+                <%= project.phases_text %>
               </p>
             <% end %>
             <% if project.positions.present? %>
               <h5>役割</h5>
               <p>
-                <%= project.positions.collect { |t| t.name }.join(", ") %>
+                <%= project.positions_text %>
               </p>
             <% end %>
             <% if project.production_url.present? %>

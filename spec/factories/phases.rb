@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :phase do
-    name { "MyString" }
+    sequence(:name) { |n| "フェーズ#{n}" }
     display_order { 1 }
   end
 end

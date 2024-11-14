@@ -35,4 +35,14 @@ class ProjectDecorator < Draper::Decorator
     object.sw_configuration.present? || object.sw_diagram.attached?
   end
 
+  def tech_tags_text
+    tech_tags.sort_by { |t| t.display_order}.collect { |t| t.name }.join(", ")
+  end
+
+  def phases_text
+    phases.sort_by { |t| t.display_order}.collect { |t| t.name }.join(", ")
+  end
+  def positions_text
+    positions.sort_by { |t| t.display_order}.collect { |t| t.name }.join(", ")
+  end
 end
