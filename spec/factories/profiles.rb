@@ -3,6 +3,6 @@ FactoryBot.define do
     user { nil }
     name { "MyString" }
     introduction { "MyText" }
-    published { false }
+    published { true }
   end
 end
