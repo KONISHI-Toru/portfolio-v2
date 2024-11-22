@@ -1,3 +1,8 @@
+body.portfolio {
+  font-size: 1rem;
+  grid-template-columns: 1fr max(45rem, 80%) 1fr;
+}
+
 .header {
   display: flex;
   justify-content: flex-start;
