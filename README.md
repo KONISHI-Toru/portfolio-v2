@@ -1,24 +1,23 @@
-# README
+# ポートフォリオ管理システム
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+エンジニアのポートフォリオを表示するためのシステムです。
+Rails の勉強がてら作ってみただけで、
+特に誰かの役に立つようなものではありませんが、
+使いたい人は自由にどうぞ。
 
-Things you may want to cover:
 
-* Ruby version
+## Requirement
 
-* System dependencies
+- Ruby 3.2.2
+- Rails 7.1.3
+- MySQL
 
-* Configuration
+## Licence
 
-* Database creation
+[MIT License](https://opensource.org/licenses/MIT).
 
-* Database initialization
+## Author
 
-* How to run the test suite
+[KONISHI Toru](mailto:sting@nifty.com)
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
