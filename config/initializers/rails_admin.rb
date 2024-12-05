@@ -46,11 +46,16 @@ RailsAdmin.config do |config|
     field :id
     field :email
     field :role, :enum do
+      formatted_value do
+        bindings[:object].role_before_type_cast
+      end
       pretty_value do
         I18n.t("enums.user.role.#{value}") if value
       end
       enum do
-        User.roles_i18n.invert
+        User.roles.map do |k, v|
+          [I18n.t("enums.user.role.#{k}"), v]
+        end.to_h
       end
     end
     field :profile do
