@@ -33,6 +33,7 @@ class Ability
 
     can :access, :rails_admin
     can :read, :dashboard
+    can :read, User, id: user.id
     can :manage, Profile, user: user
     can :manage, Project, user: user
     can :read, Phase
