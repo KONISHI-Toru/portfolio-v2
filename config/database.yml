@@ -51,5 +51,6 @@ test:
 production:
   <<: *default
   database: portfolio_production
-  username: app
-  password: <%= ENV["APP_DATABASE_PASSWORD"] %>
+  username: <%= ENV['MYSQL_USER'] %>
+  password: <%= ENV['MYSQL_PASSWORD'] %>
+  host: portfolio-db
