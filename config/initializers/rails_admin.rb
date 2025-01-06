@@ -70,6 +70,20 @@ RailsAdmin.config do |config|
     end
   end
 
+  config.model Project do
+    include_all_fields
+    field :hw_diagram, :active_storage do
+      delete_method :remove_hw_diagram
+    end
+    field :sw_diagram, :active_storage do
+      delete_method :remove_sw_diagram
+    end
+
+    list do
+      exclude_fields :hw_diagram, :hw_configuration, :sw_diagram, :sw_configuration, :tech_tags, :phases, :positions, :production_url
+    end
+  end
+
   config.model TechCategory do
     list do
       sort_by :display_order
