@@ -5,9 +5,9 @@ class User < ApplicationRecord
   #        :recoverable, :rememberable, :validatable
   devise :database_authenticatable, :recoverable, :validatable
 
-  enum role: {
-    administrator: 1,
-    owner: 2,
+  enum :role, {
+    :administrator => 1,
+    :owner => 2
   }
 
   has_one :profile
