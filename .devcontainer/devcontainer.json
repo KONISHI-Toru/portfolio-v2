@@ -1,0 +1,25 @@
+{
+  // VSCode上で表示される名前
+  "name": "portfoilio-v2",
+  // docker-composeファイルのパス
+  "dockerComposeFile": "../../docker-compose.yml",
+  // docker-composeのサービス
+  "service": "rails",
+  // VSCodeのルートディレクトリ
+  "workspaceFolder": "/app",
+  // コンテナからホストに転送するポートリスト
+  "forwardPorts": [3000],
+  // VSCodeの設定等
+  "customizations": {
+    "vscode": {
+      // 拡張機能リスト(拡張機能IDを指定)
+      // "extensions": ["MS-CEINTL.vscode-language-pack-ja"]
+      "settings": {
+        "workbench.colorTheme": "Solarized Light",
+        "workbench.editor.enablePreview": false,
+        "workbench.editor.titleScrollbarSizing": "large",
+        "explorer.autoReveal": "focusNoScroll"
+      }
+    }
+  }
+}
