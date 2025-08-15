@@ -9,7 +9,7 @@ RSpec.describe "【ログイン】", type: :request do
     {
       user: {
         email: login_user.email,
-        password: login_user.password  
+        password: login_user.password
       }
     }
   }
@@ -30,7 +30,7 @@ RSpec.describe "【ログイン】", type: :request do
       it 'ログインできること' do
         is_expected.to eq(303)
         expect(response).to redirect_to top_path
-      end   
+      end
     end
 
     context 'パスワードが間違っている場合' do
@@ -41,7 +41,7 @@ RSpec.describe "【ログイン】", type: :request do
       it 'ログインに失敗すること' do
         is_expected.to eq(422)
         expect(response.body).to include 'ログイン'
-      end   
+      end
     end
 
     context '無効なユーザの場合' do
@@ -49,7 +49,7 @@ RSpec.describe "【ログイン】", type: :request do
       it 'ログインに失敗すること' do
         is_expected.to eq(422)
         expect(response.body).to include 'ログイン'
-      end   
+      end
     end
   end
 end

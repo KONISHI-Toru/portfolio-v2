@@ -92,7 +92,7 @@ RailsAdmin.config do |config|
 
   config.model TechTag do
     list do
-      sort_by 'tech_categories.display_order, tech_tags.display_order asc, tech_tags.id'
+      sort_by "tech_categories.display_order, tech_tags.display_order asc, tech_tags.id"
     end
     exclude_fields :projects
   end

@@ -10,7 +10,7 @@ class Project < ApplicationRecord
 
   # for deletion
   attr_accessor :remove_hw_diagram
-  after_save { hw_diagram.purge if remove_hw_diagram == '1' }
+  after_save { hw_diagram.purge if remove_hw_diagram == "1" }
   attr_accessor :remove_sw_diagram
-  after_save { sw_diagram.purge if remove_sw_diagram == '1' }
+  after_save { sw_diagram.purge if remove_sw_diagram == "1" }
 end

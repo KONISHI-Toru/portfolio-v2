@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   #     get :show
   #   end
   # end
-  get 'portfolio/index'
-  get 'portfolio/show'
+  get "portfolio/index"
+  get "portfolio/show"
 
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  mount RailsAdmin::Engine => "/admin", as: "rails_admin"
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

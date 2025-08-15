@@ -2,7 +2,7 @@ class ProjectDecorator < Draper::Decorator
   delegate_all
 
   def title
-    value = ''
+    value = ""
     if self.target.present?
       value += "#{self.target} "
     end
@@ -13,20 +13,20 @@ class ProjectDecorator < Draper::Decorator
   def project_period
     from = ""
     if object.from.present?
-      from = object.from.strftime('%Y年%-m月')
+      from = object.from.strftime("%Y年%-m月")
     end
     to = ""
     if object.to.present?
-      to = object.to.strftime('%Y年%-m月')
+      to = object.to.strftime("%Y年%-m月")
     end
-  
+
     if from == "" && to == ""
       return ""
     end
-  
+
     "#{from} 〜 #{to}"
   end
-  
+
   def has_hw_configuration?
     object.hw_configuration.present? || object.hw_diagram.attached?
   end
@@ -36,13 +36,13 @@ class ProjectDecorator < Draper::Decorator
   end
 
   def tech_tags_text
-    tech_tags.sort_by { |t| t.display_order}.collect { |t| t.name }.join(", ")
+    tech_tags.sort_by { |t| t.display_order }.collect { |t| t.name }.join(", ")
   end
 
   def phases_text
-    phases.sort_by { |t| t.display_order}.collect { |t| t.name }.join(", ")
+    phases.sort_by { |t| t.display_order }.collect { |t| t.name }.join(", ")
   end
   def positions_text
-    positions.sort_by { |t| t.display_order}.collect { |t| t.name }.join(", ")
+    positions.sort_by { |t| t.display_order }.collect { |t| t.name }.join(", ")
   end
 end

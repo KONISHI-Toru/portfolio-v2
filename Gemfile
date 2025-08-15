@@ -44,18 +44,18 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"
 
-gem 'dotenv-rails'
+gem "dotenv-rails"
 
-gem 'rails_admin', '~> 3.0'
+gem "rails_admin", "~> 3.0"
 
-gem 'rails-i18n'
+gem "rails-i18n"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
 
-  gem 'rspec-rails', '~> 7.0.0'
-  gem 'factory_bot_rails'
+  gem "rspec-rails", "~> 7.0.0"
+  gem "factory_bot_rails"
 end
 
 group :development do
@@ -73,8 +73,8 @@ end
 
 
 gem "devise", "~> 4.9"
-gem 'devise-i18n'
+gem "devise-i18n"
 gem "sassc-rails"
-gem 'draper'
-gem 'cancancan'
-gem 'enum_help'
+gem "draper"
+gem "cancancan"
+gem "enum_help"
