@@ -4,5 +4,11 @@ inherit_gem:
 
 AllCops:
   Exclude:
-    - "spec/dummy/db/schema.rb"
-    - "spec/dummy/config/initializers/devise.rb"
+    - "db/schema.rb"
+    - "config/environments/*"
+    - "config/initializers/devise.rb"
+
+Layout/SpaceInsideArrayLiteralBrackets:
+  Exclude:
+    - "config/initializers/rails_admin.rb"
+    - "db/migrate/20240619024818_create_active_storage_tables.active_storage.rb"
