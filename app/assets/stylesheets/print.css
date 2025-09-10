@@ -1,0 +1,29 @@
+@media print {
+  @page  {
+    margin: 1cm 1cm;
+    size: A4;
+  }
+
+  header.header {
+    display: none;
+  }
+
+  .header {
+    display: none;
+  }
+
+  ::details-content {
+    content-visibility: visible;
+    height: auto !important;
+  }
+
+  .no-print {
+    display: none;
+  }
+  .form-group.row.no-print {
+    display: none;
+  }
+  footer {
+    display: none;
+  }
+}
