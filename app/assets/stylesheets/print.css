@@ -20,6 +20,10 @@
   .portfolio select {
     border: none;
   }
+  .projects > details > summary:first-of-type {
+    list-style: none;
+  }
+
   .no-print {
     display: none;
   }

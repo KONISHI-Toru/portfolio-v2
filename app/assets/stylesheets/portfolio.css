@@ -78,10 +78,6 @@ form > .form-group {
   background-color: #fff;
 }
 
-.projects > details > summary:first-of-type {
-  list-style: none;
-}
-
 figure > img,
 figure > picture > img {
   display: block;
