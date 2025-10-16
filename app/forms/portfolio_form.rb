@@ -13,7 +13,7 @@ class PortfolioForm
   def search
     projects = Project.with_attached_sw_diagram
                        .with_attached_hw_diagram
-                       .includes(%i[positions phases tech_tags])
+                       .includes(%i[positions phases])
 
     # user_id は必須。
     projects = projects.where(user_id: user_id)
