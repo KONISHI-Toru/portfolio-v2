@@ -8,8 +8,8 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-admin_email = ENV.fetch("ADMIN_EMAIL", nil)
-admin_password = ENV.fetch("ADMIN_PASSWORD", nil)
+admin_email = Rails.application.credentials.dig(:seed, :admin_email)
+admin_password = Rails.application.credentials.dig(:seed, :admin_password)
 
 user = User.create(
     email: admin_email,
