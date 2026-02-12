@@ -48,6 +48,10 @@
                 </figure>
               <% end %>
             <% end %>
+            <% if project.job_description.present? %>
+              <h5><%= t('activerecord.attributes.project.job_description') %></h5>
+              <%= simple_format(h(project.job_description)) %>
+            <% end %>
             <% if project.tech_tags.present? %>
               <h5>使用技術</h5>
               <p>
